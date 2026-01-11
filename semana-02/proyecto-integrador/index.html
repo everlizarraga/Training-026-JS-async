@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Loop Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🔄 Event Loop Visualizer</h1>
+      <p class="subtitle">Visualiza cómo JavaScript ejecuta código asíncrono</p>
+    </header>
+
+    <div class="main-content">
+      <!-- Editor de código -->
+      <section class="editor-section">
+        <h2>📝 Editor de Código</h2>
+        <textarea id="code-editor" placeholder="Escribí tu código JavaScript aquí...
+Ejemplo:
+console.log('A');
+setTimeout(() => console.log('B'), 0);
+Promise.resolve().then(() => console.log('C'));
+console.log('D');"></textarea>
+
+        <div class="editor-controls">
+          <button id="btn-step" class="btn btn-primary">⏭️ Siguiente Paso</button>
+          <button id="btn-reset" class="btn btn-secondary">🔄 Reset</button>
+          <select id="examples-selector" class="btn btn-secondary">
+            <option value="">📚 Cargar Ejemplo...</option>
+            <option value="1">Ejemplo 1: Básico</option>
+            <option value="2">Ejemplo 2: Microtasks</option>
+            <option value="3">Ejemplo 3: Mixed</option>
+            <option value="4">Ejemplo 4: Anidado</option>
+            <option value="5">Ejemplo 5: Complejo</option>
+          </select>
+        </div>
+
+        <div class="status-bar">
+          <span id="status-text">Estado: Listo</span>
+          <span id="step-counter">Paso: 0</span>
+        </div>
+      </section>
+
+      <!-- Visualizaciones -->
+      <section class="visualizations">
+        <div class="queue-container">
+          <div class="queue call-stack">
+            <h3>📚 Call Stack</h3>
+            <div class="queue-label">Código Síncrono</div>
+            <div id="call-stack-items" class="queue-items">
+              <div class="empty-state">Vacío</div>
+            </div>
+          </div>
+
+          <div class="queue microtask-queue">
+            <h3>⚡ Microtask Queue</h3>
+            <div class="queue-label">Promises (ALTA prioridad)</div>
+            <div id="microtask-items" class="queue-items">
+              <div class="empty-state">Vacío</div>
+            </div>
+          </div>
+
+          <div class="queue macrotask-queue">
+            <h3>📋 Macrotask Queue</h3>
+            <div class="queue-label">setTimeout (NORMAL prioridad)</div>
+            <div id="macrotask-items" class="queue-items">
+              <div class="empty-state">Vacío</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Console Output -->
+      <section class="console-section">
+        <h2>📝 Console Output</h2>
+        <div id="console-output" class="console-output">
+          <div class="console-welcome">
+            Esperando ejecución...
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>Construido para entender el Event Loop de JavaScript</p>
+    </footer>
+  </div>
+
+  <script src="visualizer.js"></script>
+</body>
+
+</html>
