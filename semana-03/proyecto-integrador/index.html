@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎬 Buscador de Películas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <h1>🎬 Buscador de Películas</h1>
+      <p class="subtitle">Powered by The Movie Database (TMDb)</p>
+    </header>
+
+    <!-- SEARCH BAR -->
+    <section class="search-section">
+      <div class="search-container">
+        <input type="text" id="search-input" class="search-input"
+          placeholder="Buscar películas... (ej: batman, matrix, avatar)" autocomplete="off">
+        <div id="search-status" class="search-status"></div>
+      </div>
+    </section>
+
+    <!-- MOVIES GRID -->
+    <section class="movies-section">
+      <div id="movies-grid" class="movies-grid">
+        <!-- Películas se insertan aquí dinámicamente -->
+      </div>
+
+      <!-- Loading Skeleton -->
+      <div id="loading-skeleton" class="loading-skeleton hidden">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+
+      <!-- Loading More (Infinite Scroll) -->
+      <div id="loading-more" class="loading-more hidden">
+        <div class="spinner"></div>
+        <p>Cargando más películas...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="empty-state">
+        <p>🔍 Buscá una película para empezar</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="error-state" class="error-state hidden">
+        <p>❌ Error al buscar películas</p>
+        <p class="error-message"></p>
+        <button id="retry-btn" class="retry-btn">Reintentar</button>
+      </div>
+    </section>
+
+    <!-- MOVIE DETAILS MODAL -->
+    <div id="movie-modal" class="modal hidden">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div id="movie-details">
+          <!-- Detalles se insertan aquí -->
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER CON ESTADÍSTICAS -->
+    <footer class="footer">
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">Requests Totales:</span>
+          <span id="stat-total" class="stat-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Desde Caché:</span>
+          <span id="stat-cache" class="stat-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Cancelados:</span>
+          <span id="stat-cancelled" class="stat-value">0</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
