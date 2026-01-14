@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder - Buscador de Recetas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1 class="header-title">
+        <span class="emoji">🍕</span>
+        Recipe Finder
+      </h1>
+      <p class="header-subtitle">Encuentra tus recetas favoritas</p>
+    </div>
+  </header>
+
+  <!-- SEARCH SECTION -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-box">
+        <input type="text" id="search-input" class="search-input"
+          placeholder="Buscar recetas... (ej: pasta, chicken, cake)" autocomplete="off">
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- LOADING SKELETON -->
+      <div id="loading-skeleton" class="loading-skeleton hidden">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div id="empty-state" class="empty-state">
+        <span class="empty-icon">🍽️</span>
+        <h2>Busca tu receta favorita</h2>
+        <p>Escribe en el buscador para encontrar recetas deliciosas</p>
+      </div>
+
+      <!-- ERROR STATE -->
+      <div id="error-state" class="error-state hidden">
+        <span class="error-icon">❌</span>
+        <h2>Oops! Algo salió mal</h2>
+        <p id="error-message">No pudimos cargar las recetas. Intenta de nuevo.</p>
+      </div>
+
+      <!-- RECIPES GRID -->
+      <div id="recipes-grid" class="recipes-grid hidden">
+        <!-- Las recipe cards se generan dinámicamente aquí -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL DE DETALLES -->
+  <div id="recipe-modal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar modal">✕</button>
+      <div id="recipe-details" class="recipe-details">
+        <!-- El contenido del modal se genera dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER CON ESTADÍSTICAS -->
+  <footer class="footer">
+    <div class="container">
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-label">Requests Totales</span>
+          <span id="stat-total" class="stat-value">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Desde Caché</span>
+          <span id="stat-cache" class="stat-value">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Cancelados</span>
+          <span id="stat-cancelled" class="stat-value">0</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TU JAVASCRIPT -->
+  <script src="app.js"></script>
+</body>
+
+</html>
