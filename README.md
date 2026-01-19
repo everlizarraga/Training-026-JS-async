@@ -79,6 +79,14 @@ semana-03/
 
 React - aplicar este conocimiento de async en hooks y efectos.
 
+## 👤 Autor
+
+**[Ever Lizarraga]**
+
+- 🌐 Portfolio: [everlizarraga.github.io](https://everlizarraga.github.io/)
+- 🐙 GitHub: [@everlizarraga](https://github.com/everlizarraga)
+- 📧 Email: rolank.utn@gmail.com
+
 ---
 
 **Duración:** 3 semanas (Enero 2026)  
