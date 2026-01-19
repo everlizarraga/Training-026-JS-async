@@ -386,6 +386,7 @@ body {
   object-fit: cover;
   border-radius: var(--border-radius);
   margin-bottom: 1.5rem;
+  cursor: pointer;
 }
 
 .recipe-details-title {
